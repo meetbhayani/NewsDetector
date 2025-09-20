@@ -1,8 +1,10 @@
-streamlit
-pandas
-scikit-learn
-joblib
-numpy
-nltk
-torch==2.2.2+cpu -f https://download.pytorch.org/whl/torch_stable.html
-transformers
+streamlit==1.49.1
+pandas==2.3.2
+numpy==2.2.6
+scikit-learn==1.7.2
+nltk==3.9.1
+tqdm==4.67.1
+pyyaml==6.0.2
+requests==2.32.5
+joblib==1.5.2
+regex==2025.9.18
