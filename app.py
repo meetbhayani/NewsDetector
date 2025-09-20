@@ -1,11 +1,11 @@
 import subprocess
 import sys
 
-# Install heavy packages at runtime if not already installed
 def install_runtime_packages():
     packages = [
         "torch==2.2.2",
-        "transformers==4.56.2"
+        "transformers==4.56.2",
+        "sentence-transformers==2.2.2"
     ]
     for package in packages:
         subprocess.check_call([sys.executable, "-m", "pip", "install", "--no-cache-dir", package])
@@ -13,15 +13,14 @@ def install_runtime_packages():
 try:
     import torch
     import transformers
+    import sentence_transformers
 except ImportError:
     install_runtime_packages()
 
-# Now safe to import transformers
+# Now safe to import
 from transformers import BertTokenizer, BertForSequenceClassification
-
-
+from sentence_transformers import SentenceTransformer, util
 import streamlit as st
-from sentence_transformers import SentenceTransformer , util
 import pandas as pd
 import torch
 
