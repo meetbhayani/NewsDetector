@@ -1,5 +1,26 @@
-import streamlit as st
+import subprocess
+import sys
+
+# Install heavy packages at runtime if not already installed
+def install_runtime_packages():
+    packages = [
+        "torch==2.2.2",
+        "transformers==4.56.2"
+    ]
+    for package in packages:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "--no-cache-dir", package])
+
+try:
+    import torch
+    import transformers
+except ImportError:
+    install_runtime_packages()
+
+# Now safe to import transformers
 from transformers import BertTokenizer, BertForSequenceClassification
+
+
+import streamlit as st
 from sentence_transformers import SentenceTransformer , util
 import pandas as pd
 import torch
