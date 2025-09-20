@@ -1,28 +1,3 @@
-import subprocess
-import sys
-
-def install_runtime_packages():
-    packages = [
-        "torch==2.2.2",
-        "transformers==4.56.2",
-        "sentence-transformers==2.2.2",
-        "huggingface-hub==0.35.0",  # compatible with transformers
-        "tokenizers==0.22.1"         # keep compatibility
-
-    ]
-    for package in packages:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "--no-cache-dir", package])
-
-# Try importing heavy packages, install if missing
-try:
-    import torch
-    import transformers
-    import sentence_transformers
-    import huggingface_hub
-except ImportError:
-    install_runtime_packages()
-
-# Now safe to import
 from transformers import BertTokenizer, BertForSequenceClassification
 from sentence_transformers import SentenceTransformer, util
 

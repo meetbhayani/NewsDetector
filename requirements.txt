@@ -1,6 +1,6 @@
 streamlit==1.49.1
 pandas==2.3.2
-numpy==2.2.6
+numpy==1.25.2
 scikit-learn==1.7.2
 nltk==3.9.1
 tqdm==4.67.1
@@ -8,3 +8,8 @@ pyyaml==6.0.2
 requests==2.32.5
 joblib==1.5.2
 regex==2025.9.18
+torch==2.2.2
+transformers==4.56.2
+sentence-transformers==2.2.2
+huggingface-hub==0.35.0
+tokenizers==0.22.1
